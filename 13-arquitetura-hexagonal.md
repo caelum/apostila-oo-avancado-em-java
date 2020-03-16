@@ -45,6 +45,14 @@ Um adaptador é código que implementa um conector, fazendo a ponte com um deter
 
 O hexágono é uma metáfora visual que dá a ideia de uma parte interna e uma parte externa. Além disso, um hexágono não unidimensional como um desenho de camadas. Os seis lados do hexágono remetem aos vários conectores de entrada e saída.
 
+> _A idéia da Arquitetura Hexagonal é colocar entradas e saídas nas bordas do nosso design. A lógica de negócios não deve depender da exposição de uma API REST ou GraphQL, nem de onde obtemos dados: um banco de dados, uma API de um Microservice exposta por gRPC ou REST, ou um simples arquivo CSV._
+>
+> _Esse pattern nos permite isolar o núcleo da lógica de nossa aplicação de preocupações externas. Dessa maneira, podemos alterar facilmente os detalhes da fonte de dados **sem um impacto significativo e sem reescrever grande parte do código**._
+>
+> _Uma das principais vantagens que vimos ao ter uma aplicação com limites claros é a nossa estratégia de teste: a maioria dos nossos testes pode verificar nossa lógica de negócios **sem depender de protocolos que podem mudar facilmente**._
+>
+> Damir Svrtan e Sergii Makagon, engenheiros da Netflix, no post [Ready for changes with Hexagonal Architecture](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749) (SVRTAN; MAKAGON, 2020)
+
 ## Arquitetura Hexagonal no Cotuba
 
 O Cotuba tem 5 módulos:

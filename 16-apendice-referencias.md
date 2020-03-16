@@ -76,4 +76,6 @@ SILVEIRA, PAULO. _Como não aprender orientação a objetos: Herança._ 2006. Em
 
 SILVEIRA, Guilherme. _Como não aprender orientação a objetos: o excesso de ifs._ 2011. Em: <http://blog.caelum.com.br/como-nao-aprender-orientacao-a-objetos-o-excesso-de-ifs/>
 
+SVRTAN, Damir; MAKAGON, Sergii. _Ready for changes with Hexagonal Architecture._ 2020. Em: <https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749>
+
 WALLS, Craig. _Modular Java: Creating Flexible Applications with OSGi and Spring._ The Pragmatic Bookshelf, 2009. 260 p. Em: <https://pragprog.com/book/cwosg/modular-java>
