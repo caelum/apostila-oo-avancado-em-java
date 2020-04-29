@@ -10,7 +10,7 @@ Por meio de abstrações fornecidas pela camada de Negócio e implementadas pela
 
 Ao invertermos as dependências, faríamos com que a Persistência dependa do Negócio, e não o contrário. Alto nível não depende mais de baixo nível. O DIP é respeitado.
 
-![3 Camadas x Dependências Invertidas {w=35}](imagens/cap04-dependency-inversion-principle/camadas-vs-dependencias-invertidas.png)
+![3 Camadas x Dependências Invertidas {w=35}](assets/imagens/cap04-dependency-inversion-principle/camadas-vs-dependencias-invertidas.png)
 
 Todas as setas apontariam para o Negócio. Teríamos uma arquitetura centrada na lógica de negócio. O modelo de domínio passaria a ser o núcleo da aplicação.
 
@@ -77,7 +77,7 @@ O módulo `cotuba-pdf` fornece um adaptador para `GeradorEbook` que usa a biblio
 
 O módulo `cotuba-epub` fornece um adaptador para `GeradorEbook` que gerar um EPUB a partir dos HTMLs por meio da biblioteca Epublib.
 
-![Cotuba como um hexágono {w=34}](imagens/cap13-arquitetura-hexagonal/ports-and-adapters-cotuba.png)
+![Cotuba como um hexágono {w=34}](assets/imagens/cap13-arquitetura-hexagonal/ports-and-adapters-cotuba.png)
 
 Poderíamos definir mais módulos, encaixando-os nos conectores já existentes. Por exemplo, poderíamos definir um módulo `cotuba-mobi`, que gera um arquivo `.mobi`, adequado para ser lido no _e-reader_ Kindle. Para isso, o módulo `cotuba-core` não precisaria ser modificado.
 
@@ -106,7 +106,7 @@ Em um forte medieval, são criadas várias **barreiras arquiteturais**, como fos
 
 Para proteger a lógica de negócio de dependências externas e voláteis, em uma Arquitetura Hexagonal, criamos barreiras arquiteturais por meio de abstrações (os conectores). As pontes para as dependências externas são feitas através dos adaptadores. Os conectores e adaptadores criam uma barreira arquitetural que permite pontos de acesso plugáveis.
 
-![Tilbury Fort, Essex, Inglaterra](imagens/cap13-arquitetura-hexagonal/tilbury-fort-essex-uk.jpg)
+![Tilbury Fort, Essex, Inglaterra](assets/imagens/cap13-arquitetura-hexagonal/tilbury-fort-essex-uk.jpg)
 
 ## Clean Architecture
 
@@ -126,7 +126,7 @@ Para isso Uncle Bob define visualmente alguns círculos concêntricos:
 - _Interface Adapters_: usam os _Use Cases_ e converte dados de/para dispositivos específicos.
 - _Frameworks and Drivers_: o círculo mais externo, contém código específico de BDs, UI, sistemas externos e outros dispositivos.
 
-![A Arquitetura Limpa {w=97}](imagens/cap13-arquitetura-hexagonal/CleanArchitecture.jpg)
+![A Arquitetura Limpa {w=97}](assets/imagens/cap13-arquitetura-hexagonal/CleanArchitecture.jpg)
 
 ### A Regra da Dependência
 

@@ -15,7 +15,7 @@ Kirk Knoernschild, no livro [Java Application Architecture: Modularity Patterns]
 - **Sem estado**: classes podem ter estado, módulos não.
 - **Unidades de Composição**: podem se unir a outros módulos para compor uma aplicação.
 
-![Características de módulos {w=47}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/caracteristicas-de-modulos.png)
+![Características de módulos {w=47}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/caracteristicas-de-modulos.png)
 
 Qual será o artefato Java que contém todas essas características?
 
@@ -213,7 +213,7 @@ Uma ideia seria ter um módulo para cada pacote. Isso levaria a vários módulos
 - `cotuba-tema`, que aplica os temas no HTML, se existirem
 - `cotuba-plugin`, que expõe os plugins
 
-![Um módulo para cada pacote {w=50}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modularizando-cotuba-por-cada-pacote.png)
+![Um módulo para cada pacote {w=50}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modularizando-cotuba-por-cada-pacote.png)
 
 Módulos com responsabilidades bem definidas respeitam o CCP: teríamos agrupado classes que mudam pelo mesmo motivo.
 
@@ -257,7 +257,7 @@ Uma outra ideia seria ter um módulo separado para a UI e outro para o resto da 
 - `cotuba-cli`, responsável pela interface da linha de comando
 - `cotuba-core`, responsável por todo o resto, como a renderização do MD para HTML, aplicação dos possíveis temas, e a geração de PDF e EPUB
 
-![Um módulo para cada pacote {w=34}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modularizando-cotuba-ui-separada.png)
+![Um módulo para cada pacote {w=34}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modularizando-cotuba-ui-separada.png)
 
 O módulo `cotuba-cli` teria uma responsabilidade bem delimitada. Já o `cotuba-core`, teria toda a lógica de geração dos ebooks. Em termos de CCP, aumentaríamos os motivos para mudança desse último módulo.
 
@@ -284,7 +284,7 @@ Por isso, teríamos os módulos:
 - `cotuba-epub`, com código para a geração de EPUB
 - `cotuba-core`, que contém a renderização do MD, aplicação dos possíveis temas e lógicas de negócio
 
-![Módulos separados para a UI e para os geradores de ebook {w=50}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modularizando-cotuba-ui-e-formatos-ebook.png)
+![Módulos separados para a UI e para os geradores de ebook {w=50}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modularizando-cotuba-ui-e-formatos-ebook.png)
 
 Em termos de CCP, há uma distribuição de responsabilidades bem razoável, com módulos focados em cada possível mudança. Se, por exemplo, a taxa de modificações na linha de comando for frequente, mudaríamos apenas o módulo `cotuba-cli`. Alterações no PDF, afetariam somente o módulo apropriado.
 
@@ -628,7 +628,7 @@ Declare `cotuba-core` como dependência e definições de build.
   ```xml
   <modules>
     <module>cotuba-core</module>
-    <module>cotuba-cli</module> 
+    <module>cotuba-cli</module> <!-- inserido -->
   </modules>
   ```
 
@@ -641,7 +641,7 @@ Declare `cotuba-core` como dependência e definições de build.
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  
+  <!-- inserido -->
   <parent>
     <groupId>cotuba</groupId>
     <artifactId>cotuba</artifactId>
@@ -653,7 +653,7 @@ Declare `cotuba-core` como dependência e definições de build.
   <̶v̶e̶r̶s̶i̶o̶n̶>̶0̶.̶0̶.̶1̶-̶S̶N̶A̶P̶S̶H̶O̶T̶<̶/̶v̶e̶r̶s̶i̶o̶n̶>̶
 
   <̶p̶r̶o̶p̶e̶r̶t̶i̶e̶s̶>̶
-   
+   <!-- todas as propriedades devem ser removidas -->
   <̶/̶p̶r̶o̶p̶e̶r̶t̶i̶e̶s̶>̶
 
   <dependencies>
@@ -664,7 +664,7 @@ Declare `cotuba-core` como dependência e definições de build.
         <version>1.4</version>
     </dependency>
   
-    
+    <!-- demais dependências devem ser removidas -->
 
   </dependencies>
 
@@ -692,7 +692,7 @@ Declare `cotuba-core` como dependência e definições de build.
   </build>
 
   <̶r̶e̶p̶o̶s̶i̶t̶o̶r̶i̶e̶s̶>̶
-    
+    <!-- todos os repositórios também devem ser removidos -->
   <̶/̶r̶e̶p̶o̶s̶i̶t̶o̶r̶i̶e̶s̶>̶
 
   </project>
@@ -726,7 +726,7 @@ Declare `cotuba-core` como dependência e definições de build.
       <version>1.4</version>
     </dependency>
 
-    
+    <!-- inserido -->
     <dependency>
       <groupId>cotuba</groupId>
       <artifactId>cotuba-core</artifactId>
@@ -800,7 +800,7 @@ As dependências entre os módulos seriam:
 
 Veja que haveria um ciclo nas dependências de `cotuba-core`, `cotuba-pdf` e `cotuba-epub`:
 
-![Dependência cíclica nos módulos do Cotuba {w=60}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/dependencias-entre-modulos-cotuba-ui-e-formatos-ebook.png)
+![Dependência cíclica nos módulos do Cotuba {w=60}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/dependencias-entre-modulos-cotuba-ui-e-formatos-ebook.png)
 
 Se alguma aplicação desejar usar apenas o módulo `cotuba-pdf` para gerar PDFs, vai depender de `cotuba-core`. Até aí tudo bem!
 
@@ -824,7 +824,7 @@ E como quebramos ciclos? Devemos inverter as dependências!
 
 O módulo `cotuba-core` poderia fornecer a abstração `GeradorEbook` que seria implementada pelas classes `GeradorPDF`, do módulo `cotuba-pdf`, e `GeradorEPUB`, do módulo `cotuba-epub`. Ambos os módulos de geração de ebook passariam a depender de `cotuba-core`. Não o contrário.
 
-![Invertendo dependências para quebrar ciclos {w=72}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/invertendo-as-dependencias-entre-modulos-cotuba-ui-e-formatos-ebook.png)
+![Invertendo dependências para quebrar ciclos {w=72}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/invertendo-as-dependencias-entre-modulos-cotuba-ui-e-formatos-ebook.png)
 
 Poderíamos transformar os módulos `cotuba-pdf` e `cotuba-epub` em plugins. A interface `GeradorEbook` seria a SPI (Service Provider Interface). As implementações dos gerados para cada formato de ebook seriam Service Providers. Obteríamos as implementações disponíveis para essa SPI através do Service Loader. Dessa forma, a enum `FormatoEbook` deixaria de depender das implementações.
 
@@ -847,7 +847,7 @@ Estabilidade dificulta a mudança. Por exemplo, uma mudança no módulo `cotuba-
 
 Já no segundo design, que quebra ciclos por meio da inversão de dependências, não há exigência de estabilidade para `cotuba-cli`, `cotuba-pdf` ou `cotuba-epub`. Porém, há uma exigência maior de estabilidade para `cotuba-core` porque teríamos os outros 3 módulos dependendo desse.
 
-![Dependências na direção do módulo mais estável {w=59}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/invertendo-as-dependencias-entre-modulos-cotuba-ui-e-formatos-ebook-simplificado.png)
+![Dependências na direção do módulo mais estável {w=59}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/invertendo-as-dependencias-entre-modulos-cotuba-ui-e-formatos-ebook-simplificado.png)
 
 Perceba, no diagrama anterior, que as setas que representam as dependências apontam para o mesmo módulo central, o `cotuba-core`. Há uma grande exigência de estabilidade para o módulo central. Os módulos periféricos não precisam ser estáveis, já que não há outros módulos que dependem deles. Podemos dizer que as setas estão direcionadas ao módulo mais estável.
 
@@ -917,7 +917,7 @@ Declare o submódulo `cotuba-core` e a biblioteca iText pdfHTML como dependênci
   <modules>
     <module>cotuba-core</module>
     <module>cotuba-cli</module>
-    <module>cotuba-pdf</module> 
+    <module>cotuba-pdf</module> <!-- inserido -->
   </modules>
   ```
 
@@ -1061,7 +1061,7 @@ Declare o submódulo `cotuba-core` e a biblioteca Epublib como dependências.
     <module>cotuba-core</module>
     <module>cotuba-cli</module>
     <module>cotuba-pdf</module>
-    <module>cotuba-epub</module> 
+    <module>cotuba-epub</module> <!-- inserido -->
   </modules>
   ```
 
@@ -1413,11 +1413,11 @@ todos os projetos e clique em OK.
 
   É importante frisar que tratam-se de dependências do Maven, que disponibilizam o JAR para o submódulo `cotuba-cli`.
 
-  ![Dependências do Maven no Cotuba modularizado {w=59}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/dependencias-maven-cotuba-ui-formatos-ebook.png)
+  ![Dependências do Maven no Cotuba modularizado {w=59}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/dependencias-maven-cotuba-ui-formatos-ebook.png)
 
   Em termos de dependências de código entre módulos, que são definidas uso efetivo de classes de outros módulos, teríamos um diagrama diferente:
 
-  ![Dependências de código no Cotuba modularizado {w=59}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/invertendo-as-dependencias-entre-modulos-cotuba-ui-e-formatos-ebook-simplificado.png)
+  ![Dependências de código no Cotuba modularizado {w=59}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/invertendo-as-dependencias-entre-modulos-cotuba-ui-e-formatos-ebook-simplificado.png)
 
   As classes presentes nos JARs dos módulos `cotuba-pdf` e `cotuba-epub` não são usadas diretamente pelo módulo `cotuba-cli`. A dependência do Maven apenas faz com que os, depois do build, os JARs dos módulos geradores de ebook fiquem disponíveis no diretório `libs` do ZIP. A ligação entre a SPI e os service providers é feita pela classe `ServiceLoader`. Não há dependência direta de código.
 
@@ -1462,11 +1462,11 @@ O valor de `I` será entre 0 e 1.
 
 Um valor 0 indica que um módulo não depende de nenhum outro (fan-out é 0) mas outros módulos o tem como dependência (fan-in maior que 0). Tal módulo apresentaria o máximo de estabilidade possível.
 
-![Módulo totalmente estável {w=50}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modulo-totalmente-estavel.png)
+![Módulo totalmente estável {w=50}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modulo-totalmente-estavel.png)
 
 Um valor 1 indica que um módulo depende de vários outros (fan-out maior que 0) mas nenhum módulo o tem como dependência (fan-in é 0). Tal módulo apresentaria o máximo de instabilidade possível.
 
-![Módulo totalmente instável {w=50}](imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modulo-totalmente-instavel.png)
+![Módulo totalmente instável {w=50}](assets/imagens/cap11-principios-de-coesao-e-acoplamento-de-modulos/modulo-totalmente-instavel.png)
 
 De acordo com o SDP, um módulo deve depender de módulos mais estáveis. Portanto, a métrica `I` de um módulo deve ser maior que as métricas dos módulos dos quais ele depende.
 

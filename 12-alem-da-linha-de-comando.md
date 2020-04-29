@@ -6,15 +6,15 @@ Digamos que um outro time implementou uma interface Web para o Cotuba, que é co
 
 - Uma tela principal, que lista todos os livros cadastrados
 
-![Livros cadastrados {w=69}](imagens/cap12-alem-da-linha-de-comando/livros-cadastrados.png)
+![Livros cadastrados {w=69}](assets/imagens/cap12-alem-da-linha-de-comando/livros-cadastrados.png)
 
 - Uma tela que detalha os capítulos do livro e que permite gerar o EPUB e o PDF
 
-![Detalhes do livro {w=62}](imagens/cap12-alem-da-linha-de-comando/detalhes-livro.png)
+![Detalhes do livro {w=62}](assets/imagens/cap12-alem-da-linha-de-comando/detalhes-livro.png)
 
 - Uma tela de edição de um capítulo
 
-![Detalhes de um capítulo {w=62}](imagens/cap12-alem-da-linha-de-comando/detalhes-capitulo.png)
+![Detalhes de um capítulo {w=62}](assets/imagens/cap12-alem-da-linha-de-comando/detalhes-capitulo.png)
 
 Essa UI Web foi implementada em um módulo específico.
 
@@ -23,7 +23,7 @@ Teríamos, então, duas UIs:
 - uma interface de linha de comando, implementada pelo módulo `cotuba-cli`
 - uma interface Web, implementada pelo novo módulo `cotuba-web`
 
-![Um módulo para a UI Web {w=62}](imagens/cap12-alem-da-linha-de-comando/modulos-cli-web-cotuba-pdf-epub.png)
+![Um módulo para a UI Web {w=62}](assets/imagens/cap12-alem-da-linha-de-comando/modulos-cli-web-cotuba-pdf-epub.png)
 
 ## Exercício: uma UI Web
 
@@ -55,7 +55,7 @@ Teríamos, então, duas UIs:
     <module>cotuba-cli</module>
     <module>cotuba-pdf</module>
     <module>cotuba-epub</module>
-    <module>cotuba-web</module> 
+    <module>cotuba-web</module> <!-- inserido -->
   </modules>
   ```
 
@@ -222,21 +222,21 @@ Disponibilize o arquivo gerado para download, alterando o controller.
   ####### cotuba-web/pom.xml
 
   ```xml
-  
+  <!-- inserido -->
   <dependency>
     <groupId>cotuba</groupId>
     <artifactId>cotuba-core</artifactId>
     <version>${project.version}</version>
   </dependency>
 
-  
+  <!-- inserido -->
   <dependency>
     <groupId>cotuba</groupId>
     <artifactId>cotuba-pdf</artifactId>
     <version>${project.version}</version>
   </dependency>
 
-  
+  <!-- inserido -->
   <dependency>
     <groupId>cotuba</groupId>
     <artifactId>cotuba-epub</artifactId>

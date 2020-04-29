@@ -130,7 +130,7 @@ O estudo inicial do projeto _Jigsaw_ agrupou o código já existente da JDK em d
 
 A análise das dependências entre os módulos identificados na JDK 7 levou à descoberta de ciclos como: o módulo base depende de Logging que depende de JMX que depende de JNDI que depende de desktop que, por sua vez, depende do base.
 
-![Emaranhado de dependências na JDK 7](imagens/cap14-apendice-modulos-com-o-java-platform-module-system-jpms/dependencias-entre-modulos-jdk7-b65.png)
+![Emaranhado de dependências na JDK 7](assets/imagens/cap14-apendice-modulos-com-o-java-platform-module-system-jpms/dependencias-entre-modulos-jdk7-b65.png)
 
 O código da JDK 8 foi reorganizado para que não houvessem ciclos e dependências indevidas, mesmo que ainda sem um sistema de módulos propriamente dito. Os pacotes que pertenceriam ao módulo base não teriam mais dependências a nenhum outro módulo.
 
@@ -144,7 +144,7 @@ Na JDK 9, foram definidos módulos JPMS para cada parte do código da JDK:
 
 As dependências entre os módulos JPMS da JDK foram organizadas de maneira bem cuidadosa.
 
-![Dependências organizadas na JDK 9](imagens/cap14-apendice-modulos-com-o-java-platform-module-system-jpms/dependencias-entre-modulos-jdk9.png)
+![Dependências organizadas na JDK 9](assets/imagens/cap14-apendice-modulos-com-o-java-platform-module-system-jpms/dependencias-entre-modulos-jdk9.png)
 
 Antes da JDK 9, toda aplicação teria disponível todos os pacotes de todas as bibliotecas do Java. Não era possível depender de menos que a totalidade da JDK.
 
@@ -238,8 +238,8 @@ Alguns módulos não são parte do módulo agregador `java.se`. Entre eles, mód
   ```xml
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>10</maven.compiler.source> 
-    <maven.compiler.target>10</maven.compiler.target> 
+    <maven.compiler.source>10</maven.compiler.source> <!-- modificado -->
+    <maven.compiler.target>10</maven.compiler.target> <!-- modificado -->
   </properties>
   ```
 
@@ -386,7 +386,7 @@ Em um projeto Spring Boot como o Cotuba Web, basta definir a API JAXB, sem a ver
   ```xml
   <dependencies>
 
-    
+    <!-- código omitido... -->
 
     <dependency>
       <groupId>javax.xml.bind</groupId>

@@ -300,7 +300,7 @@ No projeto `estatisticas-ebook`, a classe `CalculadoraEstatisticas` deve impleme
 
   Pronto! Ao invés de uma interface em comum, temos interfaces para cada uso específico.
 
-  ![Interfaces segregadas no Cotuba {w=74}](imagens/cap09-interface-segregation-principle/plugin-de-tema-e-ao-finalizar-geracao.png)
+  ![Interfaces segregadas no Cotuba {w=74}](assets/imagens/cap09-interface-segregation-principle/plugin-de-tema-e-ao-finalizar-geracao.png)
 
 7. Teste a geração do PDF e/ou EPUB, fazendo o build dos projetos `cotuba-cli`, `tema-paradizo` e `estatisticas-ebook`.
 
@@ -599,7 +599,7 @@ Use as novas interfaces no plugin `AoFinalizarGeracao` e no seu service provider
 
   O ebook deve ser gerado com os temas e as palavras devem ser exibidas.
 
-![Interfaces de domínio segregadas {w=71}](imagens/cap09-interface-segregation-principle/interfaces-de-dominio-segregadas.png)
+![Interfaces de domínio segregadas {w=71}](assets/imagens/cap09-interface-segregation-principle/interfaces-de-dominio-segregadas.png)
 
 ## Desafio (opcional): generalizando o plugin de tema
 

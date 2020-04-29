@@ -682,7 +682,7 @@ Crie uma classe responsável por gerar EPUBs e a use na classe `Main`. Os import
 
 Depois das alterações, extraímos três classes de `Main`: as classes `LeitorOpcoesCLI`, `GeradorPDF` e `GeradorEPUB`.
 
-![Classes com responsabilidades definidas {w=30}](imagens/cap03-single-responsibility-principle/cotuba-refatoracao-responsabilidades.png)
+![Classes com responsabilidades definidas {w=30}](assets/imagens/cap03-single-responsibility-principle/cotuba-refatoracao-responsabilidades.png)
 
 As responsabilidades ficaram mais bem distribuídas e o código mais fácil de entender e manter.
 
@@ -976,11 +976,11 @@ Uma questão importante é definir quem chama quem. Há várias implementações
 
 - `Main` chama `RenderizadorMDParaHTML` que, por sua vez, chama `GeradorPDF` e `GeradorEPUB`
 
-![Main chama apenas renderizador {w=49}](imagens/cap03-single-responsibility-principle/refatoracao-renderizador-opcao-1.png)
+![Main chama apenas renderizador {w=49}](assets/imagens/cap03-single-responsibility-principle/refatoracao-renderizador-opcao-1.png)
 
 - `Main` chama `RenderizadorMDParaHTML`, `GeradorPDF` e `GeradorEPUB`, coordenando todas as classes
 
-![Main coordena as classes {w=33}](imagens/cap03-single-responsibility-principle/refatoracao-renderizador-opcao-2.png)
+![Main coordena as classes {w=33}](assets/imagens/cap03-single-responsibility-principle/refatoracao-renderizador-opcao-2.png)
 
 Pensando em termos de distribuição de responsabilidades, ter a classe `Main` como "coordenadora" é uma opção melhor.
 
@@ -1407,7 +1407,7 @@ Qual tal extrair a coordenação do objetos que renderizam os `.md` e geram os `
 
 Essa classe que representa a aplicação terá um nome sugestivo: `Cotuba`.
 
-![Cotuba coordena a geração do ebook {w=48}](imagens/cap03-single-responsibility-principle/separando-aplicacao-do-controller.png)
+![Cotuba coordena a geração do ebook {w=48}](assets/imagens/cap03-single-responsibility-principle/separando-aplicacao-do-controller.png)
 
 > _Ciência da Computação é a disciplina que acredita que todos os problemas podem ser resolvidos com mais uma camada de indireção_.
 >

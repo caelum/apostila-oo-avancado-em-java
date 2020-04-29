@@ -110,11 +110,11 @@ Temos duas opções:
 
 - a classe `RenderizadorMDParaHTML` chama o `AplicadorTema` logo após renderizar cada capítulo
 
-![RenderizadorMDParaHTML chama AplicadorTema {w=34}](imagens/cap06-temas-e-plugins/renderizador-chama-aplicador-tema.png)
+![RenderizadorMDParaHTML chama AplicadorTema {w=34}](assets/imagens/cap06-temas-e-plugins/renderizador-chama-aplicador-tema.png)
 
 - a classe `Cotuba` chama o `AplicadorTema`, depois de receber a lista de capítulos de `RenderizadorMDParaHTML`
 
-![Cotuba chama RenderizadorMDParaHTML e AplicadorTema {w=35}](imagens/cap06-temas-e-plugins/cotuba-chama-renderizador-e-aplicador-tema.png)
+![Cotuba chama RenderizadorMDParaHTML e AplicadorTema {w=35}](assets/imagens/cap06-temas-e-plugins/cotuba-chama-renderizador-e-aplicador-tema.png)
 
 ### Responsabilidades
 
@@ -193,7 +193,7 @@ Seriam classes que estariam em outros JARs, fora do `cotuba-cli.jar`.
 
 Mas não sabemos quais são esses outros JARs nem o nome das classes e métodos que precisamos chamar. Não sabemos nem se esses JARs existem. Não podemos depender deles!
 
-![Cotuba chamando o Tema Paradizo NÃO é uma boa ideia {w=59}](imagens/cap06-temas-e-plugins/cotuba-chamando-plugin.png)
+![Cotuba chamando o Tema Paradizo NÃO é uma boa ideia {w=59}](assets/imagens/cap06-temas-e-plugins/cotuba-chamando-plugin.png)
 
 Precisamos de pontos de extensão, ou _plugins_, para o Cotuba. Se existirem, serão aplicados. Mas como implementá-los?
 
@@ -201,7 +201,7 @@ Precisamos de pontos de extensão, ou _plugins_, para o Cotuba. Se existirem, se
 
 O Cotuba não pode depender das classes de terceiros, mas essas podem depender do Cotuba. Podemos _inverter as dependências_!
 
-![Tema Paradizo implementa interfaces do Cotuba {w=67}](imagens/cap06-temas-e-plugins/plugin-chamando-cotuba.png)
+![Tema Paradizo implementa interfaces do Cotuba {w=67}](assets/imagens/cap06-temas-e-plugins/plugin-chamando-cotuba.png)
 
 Mais uma vez, é o código de alto nível, do Cotuba, fornecendo abstrações para um código de baixo nível, que fornece detalhes de implementação.
 

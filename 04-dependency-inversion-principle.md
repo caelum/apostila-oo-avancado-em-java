@@ -94,7 +94,7 @@ Porém, em _Runtime_, as chamadas são realizadas em uma implementação concret
 
 Por exemplo, a dependência de `EmissorNotaFiscal` à classe `EnviadorSMS` poderia ser invertida tendo uma interface como intermediária.
 
-![Dependência de código invertida x Runtime {w=75}](imagens/cap04-dependency-inversion-principle/cliente-abstracao-implementacao.png)
+![Dependência de código invertida x Runtime {w=75}](assets/imagens/cap04-dependency-inversion-principle/cliente-abstracao-implementacao.png)
 
 É comum, em projetos Java, colocar o sufixo `Impl` na classe de implementação. Então, renomearíamos a classe para `EnviadorSMSImpl` e teríamos a interface `EnviadorSMS`. Depois discutiremos se o uso de `Impl` é uma boa prática ou não.
 
@@ -206,7 +206,7 @@ Essa arquitetura NÃO atende ao DIP: código de alto nível (Negócio) depende d
 
 Para que atenda, teríamos que inserir abstrações na camada de Negócio para inverter as dependências, fazendo com que Persistência dependa de Negócio e não o contrário.
 
-![3 Camadas x Dependências Invertidas {w=35}](imagens/cap04-dependency-inversion-principle/camadas-vs-dependencias-invertidas.png)
+![3 Camadas x Dependências Invertidas {w=35}](assets/imagens/cap04-dependency-inversion-principle/camadas-vs-dependencias-invertidas.png)
 
 Como mencionamos anteriormente, para seguir de maneira estrita o DIP, deveríamos fazer com que a camada de Negócio (alto nível) também forneça abstrações para a camada de Apresentação (baixo nível), invertendo também essa dependência. Porém, é comum mantermos uma dependência direta do baixo nível ao alto nível, para que o código fique simplificado.
 
@@ -231,7 +231,7 @@ A classe `Ebook` depende de `List` e `ArrayList`, que são classes bem estáveis
 
 Porém, a classe `Cotuba`, uma classe de alto nível, depende de várias classes de baixo nível, que são mecanismos de entrega, como `RenderizadorMDParaHTML`, `GeradorPDF` e `GeradorEPUB`.
 
-![Dependências da classe Cotuba {w=55}](imagens/cap04-dependency-inversion-principle/dependencias-cotuba.png)
+![Dependências da classe Cotuba {w=55}](assets/imagens/cap04-dependency-inversion-principle/dependencias-cotuba.png)
 
 Precisamos inverter essas dependências!
 
@@ -413,7 +413,7 @@ Porém, ao instanciar `RenderizadorMDParaHTMLImpl`, estamos dependendo da implem
 
 Isso é uma violação do DIP: além da abstração, um código de alto nível acabou dependendo diretamente de uma classe de baixo nível.
 
-![Cotuba instanciando implementação {w=55}](imagens/cap04-dependency-inversion-principle/cotuba-instanciando-implementacao.png)
+![Cotuba instanciando implementação {w=55}](assets/imagens/cap04-dependency-inversion-principle/cotuba-instanciando-implementacao.png)
 
 > _Um dos lugares mais comuns em que um design de código depende de classes concretas é ao criar instâncias. Por definição, não é possível instanciar abstrações. Portanto, para criar instâncias, é preciso depender de classes concretas._
 >
@@ -599,7 +599,7 @@ Use esses novos métodos na classe `Cotuba`.
 
   Pronto! Agora `Cotuba`, uma a classe de alto nível , depende apenas de abstrações! A criação dos objetos ficou escondida em cada Factory.
 
-  ![Dependências do Cotuba invertidas {w=67}](imagens/cap04-dependency-inversion-principle/dependencias-cotuba-invertidas.png)
+  ![Dependências do Cotuba invertidas {w=67}](assets/imagens/cap04-dependency-inversion-principle/dependencias-cotuba-invertidas.png)
 
 ## Nomeando as implementações
 
@@ -669,7 +669,7 @@ public class Cotuba {
 
 O pacote de `Cotuba` é `cotuba.application`, que acaba dependendo de abstrações dos pacotes `cotuba.md`, `cotuba.pdf` e `cotuba.epub`.
 
-![Dependências entre pacotes {w=43}](imagens/cap04-dependency-inversion-principle/dependencias-entre-pacotes.png)
+![Dependências entre pacotes {w=43}](assets/imagens/cap04-dependency-inversion-principle/dependencias-entre-pacotes.png)
 
 Um pacote com código de alto nível está dependente de pacotes com código de baixo nível. Isso fere o DIP!
 
@@ -677,7 +677,7 @@ Agora, se movermos as interfaces usadas por `Cotuba` para o pacote `cotuba.appli
 
 A dependência entre os pacotes também passa a ser invertida: o pacote de alto nível não depende mais dos pacotes de baixo nível, mas o contrário!
 
-![Dependências entre pacotes invertidas {w=43}](imagens/cap04-dependency-inversion-principle/invertendo-dependencias-entre-pacotes.png)
+![Dependências entre pacotes invertidas {w=43}](assets/imagens/cap04-dependency-inversion-principle/invertendo-dependencias-entre-pacotes.png)
 
 > _Interfaces de Serviço, em geral, são do cliente (quem as usa)._
 >
@@ -887,6 +887,6 @@ A nova abstração deve ficar no mesmo pacote de `Cotuba`.
   - das classes de domínio: `Ebook` e `Capitulo`
   - de abstrações: `ParametrosCotuba`, `RenderizadorMDParaHTML`, `GeradorPDF` e `GeradorEPUB`
 
-  ![Dependências do Cotuba {w=73}](imagens/cap04-dependency-inversion-principle/dependencias-cotuba-invertidas-2.png)
+  ![Dependências do Cotuba {w=73}](assets/imagens/cap04-dependency-inversion-principle/dependencias-cotuba-invertidas-2.png)
 
 2. Teste a geração dos PDFs e EPUBs. Deve funcionar!

@@ -54,7 +54,7 @@ public interface Notificacao {
 }
 ```
 
-![Notificacao como abstração {w=54}](imagens/cap05-open-closed-principle/notificacao.png)
+![Notificacao como abstração {w=54}](assets/imagens/cap05-open-closed-principle/notificacao.png)
 
 Mas podemos ir além: todas essas ações, de persistência ou de notificação, são um conjunto de ações que devem ser feitas após a emissão da nota fiscal.
 
@@ -66,7 +66,7 @@ public interface AcaoPosEmissao {
 }
 ```
 
-![AcaoPosEmissao como abstração {w=52}](imagens/cap05-open-closed-principle/acao-pos-emissao.png)
+![AcaoPosEmissao como abstração {w=52}](assets/imagens/cap05-open-closed-principle/acao-pos-emissao.png)
 
 Na classe `EmissorNotaFiscal`, teríamos uma lista de `AcaoPosEmissao` que percorreríamos no final da geração da nota, invocando cada implementação:
 
@@ -201,7 +201,7 @@ Esse gerador não define em qual formato o ebook deverá ser gerado. Esse detalh
 
 A geração de ebooks seria mais flexível: para novos formatos, basta uma nova implementação. É o espírito do OCP!
 
-![Abstração para geração de ebooks {w=48}](imagens/cap05-open-closed-principle/gerador-ebook.png)
+![Abstração para geração de ebooks {w=48}](assets/imagens/cap05-open-closed-principle/gerador-ebook.png)
 
 ## Exercício: uma abstração melhor para a geração de ebooks
 
@@ -446,7 +446,7 @@ Defina uma _Factory_ na interface `GeradorEbook` que, dado um formato, cria a in
 
   Nesse momento, as dependências da classe `Cotuba` estão algo como a seguinte imagem:
 
-  ![Dependências do Cotuba {w=73}](imagens/cap05-open-closed-principle/dependencias-cotuba-ocp.png)
+  ![Dependências do Cotuba {w=73}](assets/imagens/cap05-open-closed-principle/dependencias-cotuba-ocp.png)
 
 
 ## Polimorfismo
