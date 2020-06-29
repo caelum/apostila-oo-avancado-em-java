@@ -1,0 +1,686 @@
+titulo: "Práticas de Design e Arquitetura para aplicações Java"
+descricao: "Práticas de Design e Arquitetura para aplicações Java"
+capitulos: 
+  -
+    titulo: "Para que serve OO?"
+    arquivo: 01-pra-que-serve-oo.md
+    codigo: pra-que-serve-oo
+    secoes:
+      -
+        titulo: "Modelagem e Dependências"
+        codigo: "modelagem-e-dependencias"
+      -
+        titulo: "Os princípios SOLID"
+        codigo: "os-principios-solid"
+      -
+        titulo: "Os princípios de coesão e acoplamento de módulos"
+        codigo: "os-principios-de-coesao-e-acoplamento-de-modulos"
+      -
+        titulo: "Para saber mais: A história dos princípios SOLID"
+        codigo: "para-saber-mais-a-historia-dos-principios-solid"
+  -
+    titulo: "Conhecendo o Cotuba"
+    arquivo: 02-conhecendo-o-projeto-cotuba.md
+    codigo: conhecendo-o-projeto-cotuba
+    secoes:
+      -
+        titulo: "Exercício: gerando um ebook"
+        codigo: "exercicio-gerando-um-ebook"
+      -
+        titulo: "Exercício: abrindo o código do Cotuba no Eclipse"
+        codigo: "exercicio-abrindo-o-codigo-do-cotuba-no-eclipse"
+      -
+        titulo: "Exercício: gerando um ebook pelo Eclipse"
+        codigo: "exercicio-gerando-um-ebook-pelo-eclipse"
+      -
+        titulo: "Um pouco sobre a implementação do Cotuba"
+        codigo: "um-pouco-sobre-a-implementacao-do-cotuba"
+      -
+        titulo: "Para saber mais: a sintaxe do Markdown"
+        codigo: "para-saber-mais-a-sintaxe-do-markdown"
+  -
+    titulo: "Single Responsibility Principle: classes coesas"
+    arquivo: 03-single-responsibility-principle.md
+    codigo: single-responsibility-principle
+    secoes:
+      -
+        titulo: "Uma classe com muitos motivos para ser modificada"
+        codigo: "uma-classe-com-muitos-motivos-para-ser-modificada"
+      -
+        titulo: "O Princípio da Responsabilidade Única"
+        codigo: "o-principio-da-responsabilidade-unica"
+      -
+        titulo: "Responsabilidades, Coesão e SRP no Cotuba"
+        codigo: "responsabilidades-coesao-e-srp-no-cotuba"
+      -
+        titulo: "Exercício: uma classe para ler as opções de linha de comando"
+        codigo: "exercicio-uma-classe-para-ler-as-opcoes-de-linha-de-comando"
+      -
+        titulo: "Exercício: uma classe para gerar PDF"
+        codigo: "exercicio-uma-classe-para-gerar-pdf"
+      -
+        titulo: "Exercício: uma classe para gerar EPUB"
+        codigo: "exercicio-uma-classe-para-gerar-epub"
+      -
+        titulo: "Refatorar é bom pra aprender OO"
+        codigo: "refatorar-e-bom-pra-aprender-oo"
+      -
+        titulo: "Não se repita"
+        codigo: "nao-se-repita"
+      -
+        titulo: "Duplicação no Cotuba"
+        codigo: "duplicacao-no-cotuba"
+      -
+        titulo: "Exercício: extraindo duplicação para uma classe renderizadora de Markdown"
+        codigo: "exercicio-extraindo-duplicacao-para-uma-classe-renderizadora-de-markdown"
+      -
+        titulo: "Um domain model para o Cotuba"
+        codigo: "um-domain-model-para-o-cotuba"
+      -
+        titulo: "Exercício: um domain model simples"
+        codigo: "exercicio-um-domain-model-simples"
+      -
+        titulo: "Exercício: usando o domain model no renderizador"
+        codigo: "exercicio-usando-o-domain-model-no-renderizador"
+      -
+        titulo: "Exercício: usando o domain model na classe principal e nos geradores de ebook"
+        codigo: "exercicio-usando-o-domain-model-na-classe-principal-e-nos-geradores-de-ebook"
+      -
+        titulo: "MVC: um molde de distribuição de responsabilidades"
+        codigo: "mvc-um-molde-de-distribuicao-de-responsabilidades"
+      -
+        titulo: "MVC pra linha de comando?"
+        codigo: "mvc-pra-linha-de-comando"
+      -
+        titulo: "Exercício: separando a Aplicação do Controller no Cotuba"
+        codigo: "exercicio-separando-a-aplicacao-do-controller-no-cotuba"
+      -
+        titulo: "Exercício: organizando os pacotes"
+        codigo: "exercicio-organizando-os-pacotes"
+      -
+        titulo: "Responsabilidades no nível de métodos"
+        codigo: "responsabilidades-no-nivel-de-metodos"
+      -
+        titulo: "Exercício opcional: métodos responsáveis"
+        codigo: "exercicio-opcional-metodos-responsaveis"
+      -
+        titulo: "Para saber mais: GRASP"
+        codigo: "para-saber-mais-grasp"
+      -
+        titulo: "Para saber mais: Design Simples"
+        codigo: "para-saber-mais-design-simples"
+  -
+    titulo: "Dependency Inversion Principle: dependências gerenciadas"
+    arquivo: 04-dependency-inversion-principle.md
+    codigo: dependency-inversion-principle
+    secoes:
+      -
+        titulo: "Uma classe com muitas dependências"
+        codigo: "uma-classe-com-muitas-dependencias"
+      -
+        titulo: "Acoplamento, Estabilidade e Volatilidade"
+        codigo: "acoplamento-estabilidade-e-volatilidade"
+      -
+        titulo: "Abstrações e inversão das dependências"
+        codigo: "abstracoes-e-inversao-das-dependencias"
+      -
+        titulo: "Regras de Negócio x Detalhes"
+        codigo: "regras-de-negocio-x-detalhes"
+      -
+        titulo: "Código de alto nível e baixo nível"
+        codigo: "codigo-de-alto-nivel-e-baixo-nivel"
+      -
+        titulo: "O Princípio da Inversão de Dependências"
+        codigo: "o-principio-da-inversao-de-dependencias"
+      -
+        titulo: "Toda interface é uma abstração de alto nível?"
+        codigo: "toda-interface-e-uma-abstracao-de-alto-nivel"
+      -
+        titulo: "DIP e a Arquitetura em 3 camadas"
+        codigo: "dip-e-a-arquitetura-em-3-camadas"
+      -
+        titulo: "Regra da Dependência"
+        codigo: "regra-da-dependencia"
+      -
+        titulo: "Acoplamento, Volatilidade, Abstrações e DIP no Cotuba"
+        codigo: "acoplamento-volatilidade-abstracoes-e-dip-no-cotuba"
+      -
+        titulo: "Exercício: invertendo as dependências da classe Cotuba"
+        codigo: "exercicio-invertendo-as-dependencias-da-classe-cotuba"
+      -
+        titulo: "Design Pattern: Factory, gerenciando dependências ao criar objetos"
+        codigo: "design-pattern-factory-gerenciando-dependencias-ao-criar-objetos"
+      -
+        titulo: "Exercício: usando Factory para as dependências da classe Cotuba"
+        codigo: "exercicio-usando-factory-para-as-dependencias-da-classe-cotuba"
+      -
+        titulo: "Nomeando as implementações"
+        codigo: "nomeando-as-implementacoes"
+      -
+        titulo: "Exercício: melhorando o nome das implementações"
+        codigo: "exercicio-melhorando-o-nome-das-implementacoes"
+      -
+        titulo: "Abstrações mais perto de quem as usa"
+        codigo: "abstracoes-mais-perto-de-quem-as-usa"
+      -
+        titulo: "Exercício: movendo as abstrações do Cotuba"
+        codigo: "exercicio-movendo-as-abstracoes-do-cotuba"
+      -
+        titulo: "Uma classe para os parâmetros"
+        codigo: "uma-classe-para-os-parametros"
+      -
+        titulo: "Exercício: simplificando parâmetros"
+        codigo: "exercicio-simplificando-parametros"
+      -
+        titulo: "Ih! Ferimos o DIP..."
+        codigo: "ih-ferimos-o-dip"
+      -
+        titulo: "Exercício: mais uma interface para inverter as dependências"
+        codigo: "exercicio-mais-uma-interface-para-inverter-as-dependencias"
+  -
+    titulo: "Open/Closed Principle: objetos flexíveis"
+    arquivo: 05-open-closed-principle.md
+    codigo: open-closed-principle
+    secoes:
+      -
+        titulo: "Em busca da abstração perfeita"
+        codigo: "em-busca-da-abstracao-perfeita"
+      -
+        titulo: "Flexibilidade"
+        codigo: "flexibilidade"
+      -
+        titulo: "Design Pattern: Command, abstraindo operações"
+        codigo: "design-pattern-command-abstraindo-operacoes"
+      -
+        titulo: "Variações Protegidas"
+        codigo: "variacoes-protegidas"
+      -
+        titulo: "O Princípio Aberto/Fechado"
+        codigo: "o-principio-abertofechado"
+      -
+        titulo: "OCP, boas abstrações e o Cotuba"
+        codigo: "ocp-boas-abstracoes-e-o-cotuba"
+      -
+        titulo: "Exercício: uma abstração melhor para a geração de ebooks"
+        codigo: "exercicio-uma-abstracao-melhor-para-a-geracao-de-ebooks"
+      -
+        titulo: "Exercício: removendo interfaces desnecessárias"
+        codigo: "exercicio-removendo-interfaces-desnecessarias"
+      -
+        titulo: "Design Pattern: Strategy, diferentes maneiras de fazer a mesma coisa"
+        codigo: "design-pattern-strategy-diferentes-maneiras-de-fazer-a-mesma-coisa"
+      -
+        titulo: "Exercício: simplificando os nomes das implementações"
+        codigo: "exercicio-simplificando-os-nomes-das-implementacoes"
+      -
+        titulo: "Uma Factory inteligente"
+        codigo: "uma-factory-inteligente"
+      -
+        titulo: "Exercício: implementando uma Factory inteligente"
+        codigo: "exercicio-implementando-uma-factory-inteligente"
+      -
+        titulo: "Polimorfismo"
+        codigo: "polimorfismo"
+      -
+        titulo: "A campanha Anti-IF"
+        codigo: "a-campanha-anti-if"
+      -
+        titulo: "Exercício: Até mais, condicionais!"
+        codigo: "exercicio-ate-mais-condicionais"
+  -
+    titulo: "Temas e Plugins"
+    arquivo: 06-temas-e-plugins.md
+    codigo: temas-e-plugins
+    secoes:
+      -
+        titulo: "Aplicando CSS no ebook"
+        codigo: "aplicando-css-no-ebook"
+      -
+        titulo: "Exercício: uma classe para aplicar temas"
+        codigo: "exercicio-uma-classe-para-aplicar-temas"
+      -
+        titulo: "Explorando o design: responsabilidades e dependências"
+        codigo: "explorando-o-design-responsabilidades-e-dependencias"
+      -
+        titulo: "Exercício: aplicando o tema"
+        codigo: "exercicio-aplicando-o-tema"
+      -
+        titulo: "A necessidade de plugins"
+        codigo: "a-necessidade-de-plugins"
+      -
+        titulo: "Pontos de extensão por meio de interfaces"
+        codigo: "pontos-de-extensao-por-meio-de-interfaces"
+      -
+        titulo: "Exercício: um plugin para o Cotuba"
+        codigo: "exercicio-um-plugin-para-o-cotuba"
+      -
+        titulo: "Exercício: uma implementação do plugin"
+        codigo: "exercicio-uma-implementacao-do-plugin"
+      -
+        titulo: "Ligando os pontos (de extensão) com a Service Loader API"
+        codigo: "ligando-os-pontos-de-extensao-com-a-service-loader-api"
+      -
+        titulo: "Exercício: ligando a SPI com o Service Provider"
+        codigo: "exercicio-ligando-a-spi-com-o-service-provider"
+      -
+        titulo: "Exercício: carregando o service provider"
+        codigo: "exercicio-carregando-o-service-provider"
+      -
+        titulo: "Exercício: testando o plugin de tema"
+        codigo: "exercicio-testando-o-plugin-de-tema"
+      -
+        titulo: "Para saber mais: Alguns usos da Service Loader API na plataforma Java"
+        codigo: "para-saber-mais-alguns-usos-da-service-loader-api-na-plataforma-java"
+  -
+    titulo: "Um plugin de estatísticas"
+    arquivo: 07-um-plugin-de-estatisticas.md
+    codigo: um-plugin-de-estatisticas
+    secoes:
+      -
+        titulo: "Um plugin menos específico"
+        codigo: "um-plugin-menos-especifico"
+      -
+        titulo: "Exercício: mais um plugin no Cotuba"
+        codigo: "exercicio-mais-um-plugin-no-cotuba"
+      -
+        titulo: "Um problema no plugin de tema"
+        codigo: "um-problema-no-plugin-de-tema"
+      -
+        titulo: "Exercício: corrigindo o problema do tema"
+        codigo: "exercicio-corrigindo-o-problema-do-tema"
+      -
+        titulo: "Um plugin para calcular estatísticas do ebook"
+        codigo: "um-plugin-para-calcular-estatisticas-do-ebook"
+      -
+        titulo: "Exercício: iniciando a implementação do plugin de estatísticas"
+        codigo: "exercicio-iniciando-a-implementacao-do-plugin-de-estatisticas"
+      -
+        titulo: "Exercício: testando o plugin de estatísticas"
+        codigo: "exercicio-testando-o-plugin-de-estatisticas"
+  -
+    titulo: "Liskov Substitution Principle: herança do jeito certo"
+    arquivo: 08-liskov-substitution-principle.md
+    codigo: liskov-substitution-principle
+    secoes:
+      -
+        titulo: "Continuando a implementação das estatísticas"
+        codigo: "continuando-a-implementacao-das-estatisticas"
+      -
+        titulo: "Exercício: tentando contar as palavras"
+        codigo: "exercicio-tentando-contar-as-palavras"
+      -
+        titulo: "Contando palavras"
+        codigo: "contando-palavras"
+      -
+        titulo: "Exercício: implementando a contagem de palavras"
+        codigo: "exercicio-implementando-a-contagem-de-palavras"
+      -
+        titulo: "Palavras em ordem alfabética"
+        codigo: "palavras-em-ordem-alfabetica"
+      -
+        titulo: "Exercício: ordenando as palavras"
+        codigo: "exercicio-ordenando-as-palavras"
+      -
+        titulo: "Herdando inutilidades"
+        codigo: "herdando-inutilidades"
+      -
+        titulo: "OO não é só herança"
+        codigo: "oo-nao-e-so-heranca"
+      -
+        titulo: "O Princípio da Substituição de Liskov"
+        codigo: "o-principio-da-substituicao-de-liskov"
+      -
+        titulo: "Favorecendo composição à herança"
+        codigo: "favorecendo-composicao-a-heranca"
+      -
+        titulo: "Exercício: composição na contagem de palavras"
+        codigo: "exercicio-composicao-na-contagem-de-palavras"
+      -
+        titulo: "A forte intimidade entre uma (classe) filha e sua mãe"
+        codigo: "a-forte-intimidade-entre-uma-classe-filha-e-sua-mae"
+      -
+        titulo: "Quando usar herança?"
+        codigo: "quando-usar-heranca"
+      -
+        titulo: "Para saber mais: o uso incorreto de herança na plataforma Java"
+        codigo: "para-saber-mais-o-uso-incorreto-de-heranca-na-plataforma-java"
+      -
+        titulo: "Qual a necessidade de um método se não há nada pra ser feito?"
+        codigo: "qual-a-necessidade-de-um-metodo-se-nao-ha-nada-pra-ser-feito"
+  -
+    titulo: "Interface Segregation Principle: clientes separados, interfaces separadas"
+    arquivo: 09-interface-segregation-principle.md
+    codigo: interface-segregation-principle
+    secoes:
+      -
+        titulo: "Uma interface, dois usos"
+        codigo: "uma-interface-dois-usos"
+      -
+        titulo: "O Princípio da Segregação de Interfaces"
+        codigo: "o-principio-da-segregacao-de-interfaces"
+      -
+        titulo: "Exercício: uma interface separada para temas"
+        codigo: "exercicio-uma-interface-separada-para-temas"
+      -
+        titulo: "Exercício: uma interface separada para a finalização da geração do ebook"
+        codigo: "exercicio-uma-interface-separada-para-a-finalizacao-da-geracao-do-ebook"
+      -
+        titulo: "Separando classes, não apenas interfaces"
+        codigo: "separando-classes-nao-apenas-interfaces"
+      -
+        titulo: "Interfaces específicas para o cliente no Cotuba"
+        codigo: "interfaces-especificas-para-o-cliente-no-cotuba"
+      -
+        titulo: "Exercício: protegendo o domain model com interfaces"
+        codigo: "exercicio-protegendo-o-domain-model-com-interfaces"
+      -
+        titulo: "Desafio (opcional): generalizando o plugin de tema"
+        codigo: "desafio-opcional-generalizando-o-plugin-de-tema"
+  -
+    titulo: "Um pouco de imutabilidade e encapsulamento"
+    arquivo: 10-um-pouco-de-imutabilidade-e-encapsulamento.md
+    codigo: um-pouco-de-imutabilidade-e-encapsulamento
+    secoes:
+      -
+        titulo: "Violar o ISP ou o DIP?"
+        codigo: "violar-o-isp-ou-o-dip"
+      -
+        titulo: "Classes sem setters"
+        codigo: "classes-sem-setters"
+      -
+        titulo: "Em direção à imutabilidade"
+        codigo: "em-direcao-a-imutabilidade"
+      -
+        titulo: "Imutabilidade"
+        codigo: "imutabilidade"
+      -
+        titulo: "Exercício: voltando atrás na segregação de interfaces"
+        codigo: "exercicio-voltando-atras-na-segregacao-de-interfaces"
+      -
+        titulo: "Exercício: um domain model imutável"
+        codigo: "exercicio-um-domain-model-imutavel"
+      -
+        titulo: "Usando objetos imutáveis"
+        codigo: "usando-objetos-imutaveis"
+      -
+        titulo: "Design Pattern: Builder"
+        codigo: "design-pattern-builder"
+      -
+        titulo: "Exercício: um builder para os capítulos"
+        codigo: "exercicio-um-builder-para-os-capitulos"
+      -
+        titulo: "Código invejoso x Código tímido"
+        codigo: "codigo-invejoso-x-codigo-timido"
+      -
+        titulo: "Encapsulamento"
+        codigo: "encapsulamento"
+      -
+        titulo: "A Lei de Deméter e o lema \"Diga, não pergunte\""
+        codigo: "a-lei-de-demeter-e-o-lema-diga-nao-pergunte"
+      -
+        titulo: "Maximizando o uso do this"
+        codigo: "maximizando-o-uso-do-this"
+      -
+        titulo: "Quebra de encapsulamento no plugin de estatísticas"
+        codigo: "quebra-de-encapsulamento-no-plugin-de-estatisticas"
+      -
+        titulo: "Design Pattern: Iterator"
+        codigo: "design-pattern-iterator"
+      -
+        titulo: "Iteração externa x iteração interna"
+        codigo: "iteracao-externa-x-iteracao-interna"
+      -
+        titulo: "Exercício: iteração interna para favorecer o encapsulamento"
+        codigo: "exercicio-iteracao-interna-para-favorecer-o-encapsulamento"
+      -
+        titulo: "MVC ferido"
+        codigo: "mvc-ferido"
+      -
+        titulo: "Um objeto para impressão"
+        codigo: "um-objeto-para-impressao"
+      -
+        titulo: "Uma abstração de uma ação com o Command Pattern"
+        codigo: "uma-abstracao-de-uma-acao-com-o-command-pattern"
+      -
+        titulo: "Uma abordagem mais funcional"
+        codigo: "uma-abordagem-mais-funcional"
+      -
+        titulo: "Usando uma interface funcional pré-definida"
+        codigo: "usando-uma-interface-funcional-pre-definida"
+      -
+        titulo: "Exercício opcional: respeitando o MVC com uma abordagem funcional"
+        codigo: "exercicio-opcional-respeitando-o-mvc-com-uma-abordagem-funcional"
+  -
+    titulo: "Princípios de Coesão e Acoplamento de Módulos"
+    arquivo: 11-principios-de-coesao-e-acoplamento-de-modulos.md
+    codigo: principios-de-coesao-e-acoplamento-de-modulos
+    secoes:
+      -
+        titulo: "O que são módulos?"
+        codigo: "o-que-sao-modulos"
+      -
+        titulo: "JARs"
+        codigo: "jars"
+      -
+        titulo: "Porque modularizar?"
+        codigo: "porque-modularizar"
+      -
+        titulo: "O que é reuso?"
+        codigo: "o-que-e-reuso"
+      -
+        titulo: "Princípios de coesão de módulos"
+        codigo: "principios-de-coesao-de-modulos"
+      -
+        titulo: "O Princípio da Equivalência entre Entrega e Reuso"
+        codigo: "o-principio-da-equivalencia-entre-entrega-e-reuso"
+      -
+        titulo: "O Princípio do Agrupamento Comum"
+        codigo: "o-principio-do-agrupamento-comum"
+      -
+        titulo: "O Princípio do Reuso Comum"
+        codigo: "o-principio-do-reuso-comum"
+      -
+        titulo: "A tensão entre os princípios de coesão de módulos"
+        codigo: "a-tensao-entre-os-principios-de-coesao-de-modulos"
+      -
+        titulo: "Módulos, componentes ou pacotes?"
+        codigo: "modulos-componentes-ou-pacotes"
+      -
+        titulo: "Modularizando o Cotuba"
+        codigo: "modularizando-o-cotuba"
+      -
+        titulo: "Módulos Maven"
+        codigo: "modulos-maven"
+      -
+        titulo: "Exercício: criando um projeto Maven multi-módulos"
+        codigo: "exercicio-criando-um-projeto-maven-multi-modulos"
+      -
+        titulo: "Exercício: criando um módulo para a aplicação"
+        codigo: "exercicio-criando-um-modulo-para-a-aplicacao"
+      -
+        titulo: "Exercício: criando um módulo para a linha de comando"
+        codigo: "exercicio-criando-um-modulo-para-a-linha-de-comando"
+      -
+        titulo: "Princípios de acoplamento de módulos"
+        codigo: "principios-de-acoplamento-de-modulos"
+      -
+        titulo: "O Princípio das Dependências Acíclicas"
+        codigo: "o-principio-das-dependencias-aciclicas"
+      -
+        titulo: "O Princípio das Dependências Estáveis"
+        codigo: "o-principio-das-dependencias-estaveis"
+      -
+        titulo: "O Princípio das Abstrações Estáveis"
+        codigo: "o-principio-das-abstracoes-estaveis"
+      -
+        titulo: "Exercício: um módulo para a geração de PDFs"
+        codigo: "exercicio-um-modulo-para-a-geracao-de-pdfs"
+      -
+        titulo: "Exercício: um módulo para a geração de EPUBs"
+        codigo: "exercicio-um-modulo-para-a-geracao-de-epubs"
+      -
+        titulo: "Exercício: quebrando ciclos através de plugins"
+        codigo: "exercicio-quebrando-ciclos-atraves-de-plugins"
+      -
+        titulo: "Métrica: instabilidade"
+        codigo: "metrica-instabilidade"
+      -
+        titulo: "Métrica: abstratividade"
+        codigo: "metrica-abstratividade"
+  -
+    titulo: "Além da linha de comando"
+    arquivo: 12-alem-da-linha-de-comando.md
+    codigo: alem-da-linha-de-comando
+    secoes:
+      -
+        titulo: "Uma interface Web para o Cotuba"
+        codigo: "uma-interface-web-para-o-cotuba"
+      -
+        titulo: "Exercício: uma UI Web"
+        codigo: "exercicio-uma-ui-web"
+      -
+        titulo: "Entendendo o código do Cotuba Web"
+        codigo: "entendendo-o-codigo-do-cotuba-web"
+      -
+        titulo: "Exercício: implementando o download de ebooks"
+        codigo: "exercicio-implementando-o-download-de-ebooks"
+      -
+        titulo: "Exercício: preparando para chamar o Cotuba"
+        codigo: "exercicio-preparando-para-chamar-o-cotuba"
+      -
+        titulo: "Chamando o Cotuba a partir da Web"
+        codigo: "chamando-o-cotuba-a-partir-da-web"
+      -
+        titulo: "Quando nosso design não antecipa as mudanças"
+        codigo: "quando-nosso-design-nao-antecipa-as-mudancas"
+      -
+        titulo: "Mudanças inesperadas e design incremental"
+        codigo: "mudancas-inesperadas-e-design-incremental"
+      -
+        titulo: "Exercício: mais abstração, mais flexibilidade"
+        codigo: "exercicio-mais-abstracao-mais-flexibilidade"
+      -
+        titulo: "Exercício: ajustando a linha de comando"
+        codigo: "exercicio-ajustando-a-linha-de-comando"
+      -
+        titulo: "Exercício: gerando ebooks a partir do Cotuba Web"
+        codigo: "exercicio-gerando-ebooks-a-partir-do-cotuba-web"
+  -
+    titulo: "Arquitetura Hexagonal"
+    arquivo: 13-arquitetura-hexagonal.md
+    codigo: arquitetura-hexagonal
+    secoes:
+      -
+        titulo: "Por uma arquitetura centrada no domínio"
+        codigo: "por-uma-arquitetura-centrada-no-dominio"
+      -
+        titulo: "Hexágonos (ou Conectores & Adaptadores)"
+        codigo: "hexagonos-ou-conectores-adaptadores"
+      -
+        titulo: "Arquitetura Hexagonal no Cotuba"
+        codigo: "arquitetura-hexagonal-no-cotuba"
+      -
+        titulo: "Arquitetura de Plugins"
+        codigo: "arquitetura-de-plugins"
+      -
+        titulo: "Barreiras Arquiteturais"
+        codigo: "barreiras-arquiteturais"
+      -
+        titulo: "Clean Architecture"
+        codigo: "clean-architecture"
+      -
+        titulo: "Outras arquiteturas semelhantes"
+        codigo: "outras-arquiteturas-semelhantes"
+      -
+        titulo: "Exercício: Discussão"
+        codigo: "exercicio-discussao"
+      -
+        titulo: "Para saber mais: Microsserviços e o Monólito Modular"
+        codigo: "para-saber-mais-microsservicos-e-o-monolito-modular"
+  -
+    titulo: "Apêndice: Módulos com o Java Platform Module System (JPMS)"
+    arquivo: 14-apendice-modulos-com-o-java-platform-module-system-jpms.md
+    codigo: apendice-modulos-com-o-java-platform-module-system-jpms
+    secoes:
+      -
+        titulo: "A falta de encapsulamento dos módulos no Java"
+        codigo: "a-falta-de-encapsulamento-dos-modulos-no-java"
+      -
+        titulo: "Exercício: acessando o que não deveríamos"
+        codigo: "exercicio-acessando-o-que-nao-deveriamos"
+      -
+        titulo: "O problema do Classpath"
+        codigo: "o-problema-do-classpath"
+      -
+        titulo: "JPMS, um sistema de módulos para o Java"
+        codigo: "jpms-um-sistema-de-modulos-para-o-java"
+      -
+        titulo: "A JDK modularizada"
+        codigo: "a-jdk-modularizada"
+      -
+        titulo: "Usando a JDK modularizada com o Classpath"
+        codigo: "usando-a-jdk-modularizada-com-o-classpath"
+      -
+        titulo: "Exercício: Instalando o Java 10 com o SDKMAN!"
+        codigo: "exercicio-instalando-o-java-10-com-o-sdkman"
+      -
+        titulo: "Exercício: Configurando o Java 10 no Eclipse"
+        codigo: "exercicio-configurando-o-java-10-no-eclipse"
+      -
+        titulo: "Exercício: Atualizando os módulos do Cotuba para o Java 10"
+        codigo: "exercicio-atualizando-os-modulos-do-cotuba-para-o-java-10"
+      -
+        titulo: "Erros ao usar o JAXB"
+        codigo: "erros-ao-usar-o-jaxb"
+      -
+        titulo: "Exercício: Corrigindo erro de JAXB no Cotuba Web"
+        codigo: "exercicio-corrigindo-erro-de-jaxb-no-cotuba-web"
+      -
+        titulo: "Encapsulando os módulos do Cotuba com o JPMS"
+        codigo: "encapsulando-os-modulos-do-cotuba-com-o-jpms"
+      -
+        titulo: "Módulos automáticos"
+        codigo: "modulos-automaticos"
+      -
+        titulo: "Exercício: Migrando o módulo Cotuba Core para o JPMS"
+        codigo: "exercicio-migrando-o-modulo-cotuba-core-para-o-jpms"
+      -
+        titulo: "Exercício: Migrando o módulo Cotuba CLI para o JPMS"
+        codigo: "exercicio-migrando-o-modulo-cotuba-cli-para-o-jpms"
+      -
+        titulo: "Declarando SPIs e Service Providers com JPMS"
+        codigo: "declarando-spis-e-service-providers-com-jpms"
+      -
+        titulo: "Exercício: Adequando o Service Loader ao JPMS"
+        codigo: "exercicio-adequando-o-service-loader-ao-jpms"
+      -
+        titulo: "Exercício: migrando os geradores de ebooks para o JPMS"
+        codigo: "exercicio-migrando-os-geradores-de-ebooks-para-o-jpms"
+      -
+        titulo: "O Modulepath"
+        codigo: "o-modulepath"
+      -
+        titulo: "Exercício: usando o Modulepath no Cotuba CLI"
+        codigo: "exercicio-usando-o-modulepath-no-cotuba-cli"
+  -
+    titulo: "Apêndice: Injeção de Dependências com Spring"
+    arquivo: 15-apendice-injecao-de-dependencias-com-spring.md
+    codigo: apendice-injecao-de-dependencias-com-spring
+    secoes:
+      -
+        titulo: "Exercício: gerenciando o Cotuba CLI com Spring"
+        codigo: "exercicio-gerenciando-o-cotuba-cli-com-spring"
+      -
+        titulo: "Exercício: abrindo o módulo Cotuba CLI para Reflection"
+        codigo: "exercicio-abrindo-o-modulo-cotuba-cli-para-reflection"
+      -
+        titulo: "Exercício: gerenciando o Cotuba Core com Spring"
+        codigo: "exercicio-gerenciando-o-cotuba-core-com-spring"
+      -
+        titulo: "Exercício: Injetando a classe Cotuba no Cotuba Web"
+        codigo: "exercicio-injetando-a-classe-cotuba-no-cotuba-web"
+  -
+    titulo: "Apêndice: Referências"
+    arquivo: 16-apendice-referencias.md
+    codigo: apendice-referencias
+
